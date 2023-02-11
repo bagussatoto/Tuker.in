@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;500;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          container: {
+            center: true,
+            padding: "16px",
+          },
+          extend: {
+            colors: {
+              darkblue: "#25316D",
+              ijo: "#418C60",
+              ijogelap: "#5A9298",
+              ijoterang: "#66A399",
+              gelap: "#0B2027",
+              terang: "#8CBAB4",
+            },
+            fontFamily: {
+              inter: ["Inter"],
+            },
+            screens: {
+              "2xl": "1320px",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link href="dist/output.css" rel="stylesheet" />
+    <link rel="icon" href="aset/iconhead.png" type="image/gif" sizes="5x5" />
+  </head>
+  <body
+    style="background-image: url(aset/bg-batik.jpeg)"
+    class="sm:bg-cover sm:bg-no-repeat h-full w-full rounded-md border border-gray-100"
+  >
+    <div
+      class="relative py-16 before:absolute before:inset-0 before:w-full before:h-[50%] before:bg-gradient-to-tr from-ijoterang via-ijogelap to-ijoterang"
+    >
+      <div
+        class="relative container m-auto px-6 text-gray-500 md:px-12 xl:px-40"
+      >
+        <div class="m-auto space-y-8 md:w-8/12 lg:w-full">
+          <div>
+            <a href="index.html">
+              <img
+                src="aset/logowhite.png"
+                loading="lazy"
+                class="w-36 ml-4"
+                alt="Tuker.in logo"
+              />
+            </a>
+          </div>
+          <div
+            class="rounded-xl border bg-opacity-50 backdrop-blur-2xl bg-[#73ABA3] shadow-xl"
+          >
+            <div class="lg:grid lg:grid-cols-2">
+              <div class="rounded-lg lg:block" hidden>
+                <img
+                  src="aset/bglogin.png"
+                  class="rounded-l-xl object-cover"
+                  loading="lazy"
+                  alt="background Login"
+                />
+              </div>
+              <div class="p-6 sm:p-16">
+                <h2 class="mb-8 text-2xl text-cyan-900 font-bold">
+                  Sign in to your account
+                </h2>
+                <form action="dashboard.html" class="space-y-8">
+                  <div class="space-y-2">
+                    <label for="email" class="text-gray-700">Email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      class="block w-full px-4 py-3 rounded-md border border-gray-300 text-gray-600 transition duration-300 focus:ring-2 focus:ring-sky-300 focus:outline-none invalid:ring-2 invalid:ring-red-400"
+                    />
+                  </div>
+
+                  <div>
+                    <div class="flex items-center justify-between">
+                      <label for="pwd" class="text-gray-700">Password</label>
+                    </div>
+                    <input
+                      type="password"
+                      name="pwd"
+                      id="pwd"
+                      class="block w-full px-4 py-3 rounded-md border border-gray-300 text-gray-600 transition duration-300 focus:ring-2 focus:ring-sky-300 focus:outline-none invalid:ring-2 invalid:ring-red-400"
+                    />
+                  </div>
+
+                  <button
+                    id="submit"
+                    class="w-full py-3 px-6 rounded-md bg-sky-600 focus:bg-sky-700 active:bg-sky-500"
+                  >
+                    <span class="text-white">Login</span>
+                  </button>
+
+                  <p class="border-t pt-6 text-sm">
+                    Belum Memiliki Akun ?
+                    <a href="#" class="text-sky-500">Sign up</a>
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="text-center font-inter font-bold space-x-4">
+            <span>&copy; Tuker.in</span>
+            <a href="#" class="text-sm hover:text-sky-900">Contact</a>
+            <a href="#" class="text-sm hover:text-sky-900">Privacy & Terms</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

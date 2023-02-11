@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Receipt</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;500;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          container: {
+            center: true,
+            padding: "16px",
+          },
+          extend: {
+            colors: {
+              darkblue: "#25316D",
+              ijo: "#418C60",
+              ijogelap: "#5A9298",
+              ijoterang: "#66A399",
+              gelap: "#0B2027",
+              terang: "#8CBAB4",
+            },
+            fontFamily: {
+              inter: ["Inter"],
+            },
+            screens: {
+              "2xl": "1320px",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link href="dist/output.css" rel="stylesheet" />
+    <link rel="icon" href="aset/iconhead.png" type="image/gif" sizes="5x5">
+  </head>
+  <body>
+    <!-- sidebar section start -->
+    <aside
+      id="sidebar"
+      class="bg-ijoterang opacity-90 fixed z-10 left-[-300px] pb-3 px-6 h-screen flex flex-col justify-between border-r transition duration-300 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] lg:left-0"
+    >
+      <div>
+        <div class="-mx-6 px-6 py-4">
+          <a href="#" title="home">
+            <img src="aset/logowhite.png" class="w-24" alt="tukerin logo" />
+          </a>
+        </div>
+
+        <div class="mt-8 text-center">
+          <img
+            src="aset/al.jpg"
+            alt="Avatar Pemilik"
+            class="w-20 h-20 m-auto rounded-full object-cover sm:w-24 sm:h-24 lg:w-28 lg:h-28"
+          />
+          <h5 class="mt-4 text-xl font-semibold text-gray-600 lg:block">
+            Firman Almadhani
+          </h5>
+          <span class="text-slate-100 lg:block">Nasabah</span>
+        </div>
+
+        <ul class="space-y-2 tracking-wide mt-8">
+          <li>
+            <a
+              href="dashboard.html"
+              aria-label="dashboard"
+              class="relative px-4 py-3 flex items-center space-x-4 rounded-xl text-black hover:text-white transition ease-in-out duration-500 hover:bg-gradient-to-r from-ijo to-ijoterang"
+            >
+              <svg class="-ml-1 h-6 w-6" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M6 8a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8ZM6 15a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-1Z"
+                  class="fill-current text-cyan-400 dark:fill-slate-600"
+                ></path>
+                <path
+                  d="M13 8a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2V8Z"
+                  class="fill-current text-cyan-200 group-hover:text-cyan-300"
+                ></path>
+                <path
+                  d="M13 15a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-1Z"
+                  class="fill-current group-hover:text-sky-300"
+                ></path>
+              </svg>
+              <span class="-mr-1 ">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="Transfer.html"
+              
+              class="relative bg-white px-4 py-3 flex items-center space-x-4 rounded-xl text-black hover:text-white transition ease-in-out duration-500 hover:bg-gradient-to-r from-ijo to-ijoterang"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  class="fill-current text-cyan-600 group-hover:text-cyan-500"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"
+                />
+              </svg>
+
+              <span class="-mr-1 font-medium">Transfer</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="payment.html"
+              class=" px-4 py-3 flex items-center space-x-4 rounded-md text-black hover:text-white transition ease-in-out duration-500 group hover:bg-gradient-to-r from-ijo to-ijoterang"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  class="fill-current text-black group-hover:text-cyan-300"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"
+                />
+              </svg>
+
+              <span>Payment</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="Savings.html"
+              class="px-4 py-3 flex items-center space-x-4 rounded-md text-black hover:text-white transition ease-in-out duration-500 group hover:bg-gradient-to-r from-ijo to-ijoterang"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  class="fill-current text-gray-600 group-hover:text-cyan-600"
+                  d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"
+                />
+                <path
+                  class="fill-current text-gray-300 group-hover:text-cyan-300"
+                  d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"
+                />
+              </svg>
+              <span>Savings</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="money-change.html"
+              class=" px-4 py-3 flex items-center space-x-4 rounded-md text-black hover:text-white transition ease-in-out duration-500 group hover:bg-gradient-to-r from-ijo to-ijoterang"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  class="text-black group-hover:text-cyan-300"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+
+              <span>Auto Money Changer</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="px-6 -mx-6 pt-4 flex justify-between items-center border-t">
+        <a href="login.html">
+        <button
+          class="px-4 py-3 flex items-center space-x-4 rounded-md group text-black transition ease-in-out duration-500 hover:bg-red-500"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+            />
+          </svg>
+          <span class="group-hover:text-white">Logout</span>
+        </button>
+      </a>
+      </div>
+    </aside>
+    <!-- Sidebar section end -->
+
+    <!-- Content section start -->
+    <div class="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
+      <div class="z-10 top-0 h-16 border-b lg:pt-2.5">
+        <div
+          class="px-6 flex items-center justify-between space-x-4 2xl:container"
+        >
+          <h5 hidden class="text-2xl text-gray-600 font-medium lg:block">
+            Receipt
+          </h5>
+          <button
+            id="hamburger"
+            name="hamburger"
+            type="button"
+            class="absolute mt-16 right-7 py-2 lg:hidden"
+          >
+            <span
+              class="hamburger-line transition duration-300 ease-in-out origin-top-left"
+            ></span>
+            <span
+              class="hamburger-line transition duration-300 ease-in-out"
+            ></span>
+            <span
+              class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"
+            ></span>
+          </button>
+          <div id="transfer" class="w-full mx-auto self-center lg:w-1/3"></div>
+          <button
+            id="exit"
+            type="button"
+            class="hover:text-red-400 float-right"
+          ></button>
+        </div>
+      </div>
+
+      <!-- Fitur section start -->
+      <section id="fitur" class="pt-10 pb-16 bg-slate-200">
+        <div class="container">
+          <div class="w-full self-center px-4 mb-10">
+            <div class="md:col-span-2 lg:col-span-1">
+              <div
+                class="w-full mx-auto py-6 px-6 rounded-xl border border-gray-200 bg-white"
+              >
+              <div class="rounded-md py-2" style="background-image: url('aset/bg-batik.jpeg')">
+                <img
+                  src="aset/logoblack.png"
+                  class="w-1/6 ml-2 xl:ml-0"
+                  alt="Logo website"
+                />
+                <h1 class="font-inter font-bold text-3xl ml-3 mt-4">
+                  Transaksi Berhasil
+                </h1>
+
+                <div class="font-light ml-4 flex flex-wrap">
+                  <p class="mr-1">20 September 2022 -</p>
+                  <p class="mr-2">18:55:58 WIB -</p>
+                  <p class="mr-2">No. Ref. 25245265857485</p>
+                </div>
+            </div>
+                <div class="w-full pt-6 px-4">
+                  <h1 class="text-lg text-gray-500">Penerima</h1>
+                  <h1 class="font-inter uppercase font-bold text-3xl">
+                    almadhani
+                  </h1>
+                  <div
+                    class="font-inter text-gray-600 flex flex-wrap pb-3 border-b-2"
+                  >
+                    <p class="font-inter text-gray-600">Tuker.in -</p>
+                    <p class="text-ijo ml-1">2574 1354 111</p>
+                  </div>
+                </div>
+                <div class="w-full pt-3 px-4">
+                  <h1 class="w-full text-lg text-gray-500 pb-2">
+                    Detail Transaksi
+                  </h1>
+                  <div class="flex pb-1">
+                    <div
+                      class="w-full flex flex-wrap justify-between font-inter text-xl"
+                    >
+                      <p class="font-bold">Nominal Transaksi</p>
+                      <p class="font-inter font-bold">Rp 200.000</p>
+                    </div>
+                  </div>
+                  <div class="flex pb-1">
+                    <div
+                      class="w-full flex flex-wrap justify-between font-inter text-xl"
+                    >
+                      <p>Metode Transaksi</p>
+                      <p>Sesama Tuker.in</p>
+                    </div>
+                  </div>
+                  <div class="flex pb-1 border-b-2">
+                    <div
+                      class="w-full flex flex-wrap justify-between font-inter text-xl"
+                    >
+                      <p>Biaya Transaksi</p>
+                      <p>Rp 0</p>
+                    </div>
+                  </div>
+                  <div
+                    class="w-full flex flex-wrap justify-between font-inter text-xl border-b-2 py-2"
+                  >
+                    <p class="font-bold">Total Transaksi</p>
+                    <p class="font-inter font-bold">Rp 200.000</p>
+                  </div>
+                </div>
+                <div class="w-full px-4 py-2">
+                  <h1 class="text-lg pb-2 text-black">Rekening Sumber</h1>
+                  <div class="w-full">
+                    <h1 class="font-inter uppercase font-bold text-3xl">
+                      firman almadhani
+                    </h1>
+                    <div
+                      class="font-inter text-gray-600 flex flex-wrap pb-3 "
+                    >
+                      <p class="font-inter text-gray-600">Tuker.in -</p>
+                      <p class="text-ijo ml-1">**** **** 111</p>
+                    </div>
+                    <div class="w-1/3 mx-auto px-4">
+                        <button
+                          
+                          onclick="window.print();return false;"
+                          id="print-btn"
+                          class="print:hidden text-xl w-full font-semibold text-white bg-ijoterang py-3 px-8 rounded-full hover:text-black hover:opacity-80 hover:shadow-lg transition duration-500"
+                        >
+                          Print
+                        </button>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Fitur section end -->
+    </div>
+    <!-- Content section end -->
+  </body>
+
+  <!-- Script section -->
+  <script src="dist/js/script.js"></script>
+</html>

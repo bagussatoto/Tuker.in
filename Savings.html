@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;500;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          container: {
+            center: true,
+            padding: "16px",
+          },
+          extend: {
+            colors: {
+              darkblue: "#25316D",
+              ijo: "#418C60",
+              ijogelap: "#5A9298",
+              ijoterang: "#66A399",
+              gelap: "#0B2027",
+              terang: "#8CBAB4",
+            },
+            fontFamily: {
+              inter: ["Inter"],
+            },
+            screens: {
+              "2xl": "1320px",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link href="dist/output.css" rel="stylesheet" />
+    <link rel="icon" href="aset/iconhead.png" type="image/gif" sizes="5x5">
+  </head>
+  <body>
+    <!-- sidebar section start -->
+    <aside
+      id="sidebar"
+      class="bg-gradient-to-tr from-ijoterang via-ijogelap to-ijoterang fixed z-10 left-[-300px] pb-3 px-6 h-screen flex flex-col justify-between border-r transition duration-300 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] lg:left-0"
+    >
+      <div>
+        <div class="-mx-6 px-6 py-4">
+          <a href="#" title="home">
+            <img src="aset/logowhite.png" class="w-24" alt="tukerin logo" />
+          </a>
+        </div>
+
+        <div class="mt-8 text-center">
+          <img
+            src="aset/al.jpg"
+            alt="Avatar Pemilik"
+            class="w-20 h-20 m-auto rounded-full object-cover sm:w-24 sm:h-24 lg:w-28 lg:h-28"
+          />
+          <h5 class="mt-4 text-xl font-semibold text-gray-600 lg:block">
+            Firman Almadhani
+          </h5>
+          <span class="text-slate-100 lg:block">Nasabah</span>
+        </div>
+
+        <ul class="space-y-2 tracking-wide mt-8">
+          <li>
+            <a
+              href="dashboard.html"
+              aria-label="dashboard"
+              class="relative px-4 py-3 flex items-center space-x-4 rounded-xl text-black hover:text-white transition ease-in-out duration-500 hover:bg-gradient-to-r from-ijo to-ijoterang"
+            >
+              <svg class="-ml-1 h-6 w-6" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M6 8a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8ZM6 15a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-1Z"
+                  class="fill-current text-cyan-400 dark:fill-slate-600"
+                ></path>
+                <path
+                  d="M13 8a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2V8Z"
+                  class="fill-current text-cyan-200 group-hover:text-cyan-300"
+                ></path>
+                <path
+                  d="M13 15a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-1Z"
+                  class="fill-current group-hover:text-sky-300"
+                ></path>
+              </svg>
+              <span class="-mr-1">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="Transfer.html"
+              class="relative px-4 py-3 flex items-center space-x-4 rounded-xl text-black hover:text-white transition ease-in-out duration-500 hover:bg-gradient-to-r from-ijo to-ijoterang"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  class="fill-current group-hover:text-cyan-500"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"
+                />
+              </svg>
+
+              <span class="-mr-1">Transfer</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#payment.html"
+              class="px-4 py-3 flex items-center space-x-4 rounded-md text-black hover:text-white transition ease-in-out duration-500 group hover:bg-gradient-to-r from-ijo to-ijoterang"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  class="fill-current text-gray-600 group-hover:text-cyan-300"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"
+                />
+              </svg>
+
+              <span>Payment</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="Savings.html"
+              class="bg-white px-4 py-3 flex items-center space-x-4 rounded-md text-black hover:text-white transition ease-in-out duration-500 group hover:bg-gradient-to-r from-ijo to-ijoterang"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  class="fill-current text-cyan-600 group-hover:text-cyan-600"
+                  d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"
+                />
+                <path
+                  class="fill-current text-gray-300 group-hover:text-cyan-300"
+                  d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"
+                />
+              </svg>
+              <span class="-mr-1 font-medium">Savings</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="money-change.html"
+              class=" px-4 py-3 flex items-center space-x-4 rounded-md text-black hover:text-white transition ease-in-out duration-500 group hover:bg-gradient-to-r from-ijo to-ijoterang"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  class="text-black group-hover:text-cyan-300"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+
+              <span>Auto Money Changer</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="px-6 -mx-6 pt-4 flex justify-between items-center border-t">
+        <a href="login.html">
+          <button
+            class="px-4 py-3 flex items-center space-x-4 rounded-md group text-black transition ease-in-out duration-500 hover:bg-red-500"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+              />
+            </svg>
+            <span class="group-hover:text-white">Logout</span>
+          </button>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Content section start -->
+    <div class="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
+      <div
+      
+      style="background-image:url(aset/bg-batik.jpeg)"
+       class="z-10 top-0 h-16 border-b lg:pt-2.5">
+        <div
+          class="px-6 flex items-center justify-between space-x-4 2xl:container"
+        >
+          <h5 hidden class="text-2xl text-gray-600 font-medium lg:block">
+            Savings
+          </h5>
+          <button
+            id="hamburger"
+            name="hamburger"
+            type="button"
+            class="absolute mt-16 right-7 py-2 lg:hidden"
+          >
+            <span
+              class="hamburger-line transition duration-300 ease-in-out origin-top-left"
+            ></span>
+            <span
+              class="hamburger-line transition duration-300 ease-in-out"
+            ></span>
+            <span
+              class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"
+            ></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Testing star -->
+
+      <!-- Testing end -->
+
+      <!-- Fitur section start -->
+      <section id="fitur" class="pt-10 pb-16 bg-gradient-to-tr from-ijoterang via-ijogelap to-ijoterang">
+        <div class="container">
+          <div class="w-full self-center px-4 mb-10">
+            <div class="md:col-span-2 lg:col-span-1">
+              <div
+              
+          style="background-image:url(aset/bg-batik.jpeg)"
+                class="sm:bg-cover sm:bg-no-repeat w-full h-full mx-auto hover:bg-ijogelap py-6 px-6 rounded-xl border border-gray-200 "
+              >
+                <img
+                  src="aset/card-member.png"
+                  alt=""
+                  class="w-56 mx-auto mt-3 mb-5"
+                />
+                <h5 class="font-inter text-2xl text-gray-600 text-center mt-4">
+                  Tabungan
+                </h5>
+
+                <h1 class="text-3xl font-bold text-center text-gray-800">
+                  Rp1.459.000
+                </h1>
+
+                <!-- 3 Button start -->
+                <div class="flex flex-wrap">
+                  <!-- Button 1 start -->
+                  <div
+                    id="transfer"
+                    class="w-full mx-auto self-center mt-0 pt-8 lg:w-1/3"
+                  >
+                    <div
+                      class="w-44 flex flex-wrap mx-auto h-28 bg-ijo rounded-lg"
+                    >
+                      <button class="text-white flex flex-wrap mx-auto">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="mx-auto pt-5 w-16"
+                        >
+                          <path
+                            class=""
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <h3
+                      class=" mt-2 mx-auto text-center font-inter font-bold text-xl md:text:2xl lg:3xl"
+                    >
+                      Transfer
+                    </h3>
+                  </div>
+                  <!-- Button 1 end -->
+                  <!-- Button 2 start -->
+                  <div class="w-full mx-auto self-center mt-0 pt-8 lg:w-1/3">
+                    <div class="w-44 mx-auto h-28 bg-ijo rounded-lg">
+                      <a class="text-white w-full" href="Payment.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="mx-auto pt-5 w-16"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 013.75 9.375v-4.5zM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 01-1.125-1.125v-4.5zM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0113.5 9.375v-4.5z"
+                          />
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M6.75 6.75h.75v.75h-.75v-.75zM6.75 16.5h.75v.75h-.75v-.75zM16.5 6.75h.75v.75h-.75v-.75zM13.5 13.5h.75v.75h-.75v-.75zM13.5 19.5h.75v.75h-.75v-.75zM19.5 13.5h.75v.75h-.75v-.75zM19.5 19.5h.75v.75h-.75v-.75zM16.5 16.5h.75v.75h-.75v-.75z"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+
+                    <h3
+                      class="mt-2 m-auto text-center font-inter font-bold text-xl md:text:2xl lg:3xl"
+                    >
+                      Pembayaran QR Code
+                    </h3>
+                  </div>
+                  <!-- Button 2 end -->
+                  <!-- button 3 start -->
+                  <div class="w-full mt-0 pt-8 lg:w-1/3">
+                    <div class="w-44 mx-auto h-28 bg-ijo rounded-lg">
+                      <a class="text-white" href="money-change.html">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="mx-auto pt-5 w-16"
+                        >
+                          <path
+                            class=""
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+
+                    <h3
+                      class="mt-2 text-center font-inter font-bold text-xl md:text:2xl lg:3xl"
+                    >
+                      Tukar Mata Uang
+                    </h3>
+                  </div>
+                  <!-- Button 3 end -->
+                </div>
+                <!-- 3 Button end -->
+
+                <!-- testing -->
+                <div
+                  id="viewTrans"
+                  class="hidden w-full self-center px-4 my-10"
+                >
+                  <div class="md:col-span-2 lg:col-span-1">
+                    <div
+                      class="w-full h-full mx-auto bg-ijogelap py-6 px-6 rounded-xl border border-gray-200 "
+                    >
+                      <button
+                        id="exit"
+                        type="button"
+                        class="text-white hover:text-red-500 mb-10 float-right"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="w-14"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M6 18L18 6M6 6l12 12"
+                          />
+                        </svg>
+                      </button>
+
+                      <h1
+                        class="font-inter text-white uppercase border-b-2 font-bold text-xl mx-4 mt-8"
+                      >
+                        Pilih Metode transfer
+                      </h1>
+
+                      <!-- 3 Button start -->
+                      <div class="flex flex-wrap">
+                        <!-- Button 1 start -->
+                        <div class="w-full mx-auto mt-0 pt-8 lg:w-1/3">
+                          <div
+                            class="shadow-lg hover:scale-105 hover:shadow-2xl transition ease-in-out py-4 w-full mx-auto bg-ijo rounded-lg"
+                          >
+                            <a href="Transfer.html">
+                              <img
+                                class="w-28 flex flex-wrap mx-auto"
+                                src="aset/logowhite.png"
+                                alt="logo tukerin"
+                              />
+                              <div
+                                class=" w-full divide-y-2 divide-slate-400 mx-auto"
+                              >
+                              <div
+                              class="text-center font-sans text-xl md:text:2xl lg:3xl text-white w-full divide-y-2 divide-slate-400 mx-auto"
+                              >
+                                <p
+                                >
+                                  Kirim ke sesama Tuker.in
+                                </p>
+                                <p
+                                >
+                                  Gratis
+                                </p>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <!-- Button 1 end -->
+                        <!-- Button 2 start -->
+                        <div class="w-full mx-auto mt-0 pt-8 lg:w-1/3">
+                          <div
+                            class="shadow-lg hover:scale-105 hover:shadow-2xl transition ease-in-out py-4 w-full mx-auto bg-ijo rounded-lg"
+                          >
+                            <a href="#">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                class="w-full h-28 text-white"
+                              >
+                                <path
+                                  d="M11.584 2.376a.75.75 0 01.832 0l9 6a.75.75 0 11-.832 1.248L12 3.901 3.416 9.624a.75.75 0 01-.832-1.248l9-6z"
+                                />
+                                <path
+                                  fill-rule="evenodd"
+                                  d="M20.25 10.332v9.918H21a.75.75 0 010 1.5H3a.75.75 0 010-1.5h.75v-9.918a.75.75 0 01.634-.74A49.109 49.109 0 0112 9c2.59 0 5.134.202 7.616.592a.75.75 0 01.634.74zm-7.5 2.418a.75.75 0 00-1.5 0v6.75a.75.75 0 001.5 0v-6.75zm3-.75a.75.75 0 01.75.75v6.75a.75.75 0 01-1.5 0v-6.75a.75.75 0 01.75-.75zM9 12.75a.75.75 0 00-1.5 0v6.75a.75.75 0 001.5 0v-6.75z"
+                                  clip-rule="evenodd"
+                                />
+                                <path
+                                  d="M12 7.875a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25z"
+                                />
+                              </svg>
+
+                              <div
+                                class="text-center font-sans text-xl md:text:2xl lg:3xl text-white w-full divide-y-2 divide-slate-400 mx-auto"
+                              >
+                                <p
+                                  class="text-center font-sans text-xl md:text:2xl lg:3xl"
+                                >
+                                  Kirim ke Bank Lain
+                                </p>
+                                <p
+                                >
+                                  Belum termasuk pajak
+                                </p>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <!-- Button 2 end -->
+                      </div>
+                      <!-- 3 Button end -->
+                    </div>
+                  </div>
+
+                  <!-- Transaksi header end -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Transaksi section start -->
+            <div class="text-white max-w-xl mx-auto text-center mb-5">
+              <!-- Transaksi Header start -->
+              <h3
+                class="mx-auto mb-2 mt-10 font-inter font-bold text-3xl md:text-3xl lg:5xl"
+              >
+                Transaksi
+              </h3>
+              <p class="mx-auto mt-2 font-light text-xl md:text-2xl lg:3xl">
+                Kami mencatat semua transaksi yang anda lakukan sehingga
+                tercipta transparansi
+              </p>
+            </div>
+            <!-- Transaksi header end -->
+          </div>
+
+          <!-- Pencatatan 1 start -->
+          <div class="container">
+            <div class="flex flex-wrap">
+              <div class="w-full mx-auto my-10 lg:w-1/3">
+                <div class="pb-10 w-full h-full mx-auto bg-white rounded-lg">
+                  <h3
+                    class="pt-5 text-center font-inter font-bold text-xl md:text:2xl lg:3xl"
+                  >
+                    Pemasukan
+                  </h3>
+                  <!-- Grouping detail start -->
+
+                  <div class="w-full pt-4 px-4">
+                    <p class="font-sans font-light pb-2">17 September 2022</p>
+                    <div class="flex items-center">
+                      <div
+                        class="w-9 h-9 mr-2 rounded-full flex justify-center items-center bg-white border border-slate-300 hover:border-ijoterang hover:bg-ijo hover:text-white"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="w-6 h-6"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="w-full flex flex-wrap justify-between font-inter text-xl"
+                      >
+                        <p>Transfer</p>
+                        <p class="text-green-400">+Rp459.000</p>
+                      </div>
+                    </div>
+                    <div class="font-base px-11">
+                      <p>Transfer antar Tuker.in</p>
+                      <p class="uppercase">firman almadhani 958756032365</p>
+                    </div>
+                  </div>
+                  <div class="w-full border border-gray-200 pt-4 px-4">
+                    <p class="font-sans font-light pb-2">10 September 2022</p>
+                    <div class="flex items-center">
+                      <div
+                        class="w-9 h-9 mr-2 rounded-full flex justify-center items-center bg-white border border-slate-300 hover:border-ijoterang hover:bg-ijo hover:text-white"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="w-6 h-6"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="w-full flex flex-wrap justify-between font-inter text-xl"
+                      >
+                        <p>Transfer</p>
+                        <p class="text-green-400">+Rp459.000</p>
+                      </div>
+                    </div>
+                    <div class="font-base px-11">
+                      <p>Transfer antar Tuker.in</p>
+                      <p class="uppercase">firman almadhani 958756032365</p>
+                    </div>
+                  </div>
+                  <div class="w-full border border-gray-200 pt-4 px-4">
+                    <p class="font-sans font-light pb-2">8 September 2022</p>
+                    <div class="flex items-center">
+                      <div
+                        class="w-9 h-9 mr-2 rounded-full flex justify-center items-center bg-white border border-slate-300 hover:border-ijoterang hover:bg-ijo hover:text-white"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="w-6 h-6"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="w-full flex flex-wrap justify-between font-inter text-xl"
+                      >
+                        <p>Transfer</p>
+                        <p class="text-green-400">+Rp459.000</p>
+                      </div>
+                    </div>
+                    <div class="font-base px-11">
+                      <p>Transfer antar Tuker.in</p>
+                      <p class="uppercase">firman almadhani 958756032365</p>
+                    </div>
+                  </div>
+                  <div class="w-full pt-4 px-4">
+                    <p class="font-sans font-light pb-2">4 September 2022</p>
+                    <div class="flex items-center">
+                      <div
+                        class="w-9 h-9 mr-2 rounded-full flex justify-center items-center bg-white border border-slate-300 hover:border-ijoterang hover:bg-ijo hover:text-white"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="w-6 h-6"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="w-full flex flex-wrap justify-between font-inter text-xl"
+                      >
+                        <p>Transfer</p>
+                        <p class="text-green-400">+Rp459.000</p>
+                      </div>
+                    </div>
+                    <div class="font-base px-11">
+                      <p>Transfer antar Tuker.in</p>
+                      <p class="uppercase">firman almadhani 958756032365</p>
+                    </div>
+                  </div>
+
+                  <!-- Grouping detail end -->
+                </div>
+              </div>
+              <!-- Pencatatan 2 start -->
+              <div class="w-full mx-auto my-10 lg:w-1/3">
+                <div class="pb-10 w-full h-full mx-auto bg-white rounded-lg">
+                  <h3
+                    class="pt-5 text-center font-inter font-bold text-xl md:text:2xl lg:3xl"
+                  >
+                    Pengeluaran
+                  </h3>
+                  <!-- Grouping detail start -->
+
+                  <div class="w-full pt-4 px-4">
+                    <p class="font-sans font-light pb-2">17 September 2022</p>
+                    <div class="flex items-center">
+                      <div
+                        class="w-9 h-9 mr-2 rounded-full flex justify-center items-center bg-white border border-slate-300 hover:border-ijoterang hover:bg-red-400 hover:text-white"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="w-6 h-6"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="w-full flex flex-wrap justify-between font-inter text-xl"
+                      >
+                        <p>Transfer</p>
+                        <p class="text-red-400">-Rp459.000</p>
+                      </div>
+                    </div>
+                    <div class="font-base px-11">
+                      <p>Transfer antar Tuker.in</p>
+                      <p class="uppercase">firman almadhani 958756032365</p>
+                    </div>
+                  </div>
+                  <div class="w-full border border-gray-200 pt-4 px-4">
+                    <p class="font-sans font-light pb-2">10 September 2022</p>
+                    <div class="flex items-center">
+                      <div
+                        class="w-9 h-9 mr-2 rounded-full flex justify-center items-center bg-white border border-slate-300 hover:border-ijoterang hover:bg-red-400 hover:text-white"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="w-6 h-6"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="w-full flex flex-wrap justify-between font-inter text-xl"
+                      >
+                        <p>Bayar</p>
+                        <p class="text-red-400">-Rp59.000</p>
+                      </div>
+                    </div>
+                    <div class="font-base px-11">
+                      <p>Pembayaran QR</p>
+                      <p class="uppercase">Olive Fried Chicken 25486318</p>
+                    </div>
+                  </div>
+                  <div class="w-full border border-gray-200 pt-4 px-4">
+                    <p class="font-sans font-light pb-2">8 September 2022</p>
+                    <div class="flex items-center">
+                      <div
+                        class="w-9 h-9 mr-2 rounded-full flex justify-center items-center bg-white border border-slate-300 hover:border-ijoterang hover:bg-red-400 hover:text-white"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="w-6 h-6"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="w-full flex flex-wrap justify-between font-inter text-xl"
+                      >
+                        <p>Transfer</p>
+                        <p class="text-red-400">-Rp459.000</p>
+                      </div>
+                    </div>
+                    <div class="font-base px-11">
+                      <p>Transfer antar Tuker.in</p>
+                      <p class="uppercase">firman almadhani 958756032365</p>
+                    </div>
+                  </div>
+                  <div class="w-full pt-4 px-4">
+                    <p class="font-sans font-light pb-2">4 September 2022</p>
+                    <div class="flex items-center">
+                      <div
+                        class="w-9 h-9 mr-2 rounded-full flex justify-center items-center bg-white border border-slate-300 hover:border-ijoterang hover:bg-red-400 hover:text-white"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="w-6 h-6"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="w-full flex flex-wrap justify-between font-inter text-xl"
+                      >
+                        <p>Bayar</p>
+                        <p class="text-red-400">-Rp459.000</p>
+                      </div>
+                    </div>
+                    <div class="font-base px-11">
+                      <p>Pembayaran QR</p>
+                      <p class="uppercase">esque gejayan 57484687</p>
+                    </div>
+                  </div>
+
+                  <!-- Grouping detail end -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Pencatatan End -->
+        </div>
+      </section>
+      <!-- Fitur section end -->
+    </div>
+    <!-- Content section end -->
+  </body>
+
+  <!-- Script section -->
+  <script src="dist/js/script.js"></script>
+</html>
